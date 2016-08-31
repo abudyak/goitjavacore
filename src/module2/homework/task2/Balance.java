@@ -44,4 +44,16 @@ public class Balance {
     public void setTransactionCommission(float transactionCommission) {
         this.transactionCommission = transactionCommission;
     }
+
+    public double getBalanceNow() {
+        return balanceNow;
+    }
+
+    public double getHowMuchMoneyToWithdraw() {
+        return howMuchMoneyToWithdraw;
+    }
+
+    public float getTransactionCommission() {
+        return transactionCommission;
+    }
 }
