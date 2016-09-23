@@ -6,29 +6,29 @@ import java.util.Date;
 
 public class BookingComAPI implements API {
 
-    private Room[] rooms;
+    private Room[] rooms = new Room[5];
 
     public BookingComAPI() {
-        Date date1 = new Date();
+        Date date1 = new Date(1474232311);
         date1.setTime(1474232311);
 
-        Date date2 = new Date();
+        Date date2 = new Date(1474232322);
         date2.setTime(1474232322);
 
-        Date date3 = new Date();
+        Date date3 = new Date(1574232344);
         date3.setTime(1474232333);
 
         Date date4 = new Date();
-        date4.setTime(1474232344);
+        date2.setTime(1474232322);
 
         Date date5 = new Date();
-        date5.setTime(1474232355);
+        date5.setTime(1574232344);
 
-        rooms[1] = new Room(1, 400, 2, date1, "GrandHotel", "New York");
-        rooms[2] = new Room(2, 200, 2, date2, "GrandHotel", "Kiev");
-        rooms[3] = new Room(3, 300, 2, date3, "GrandHotel", "Paris");
-        rooms[4] = new Room(4, 500, 2, date4, "GrandHotel", "Las Vegas");
-        rooms[5] = new Room(5, 200, 2, date5, "GrandHotel", "Tokyo");
+        rooms[0] = new Room(1, 400, 2, date1, "GrandHotel", "New York");
+        rooms[1] = new Room(2, 200, 2, date2, "GrandHotel", "Kiev");
+        rooms[2] = new Room(3, 300, 2, date3, "HotelPlus", "Paris");
+        rooms[3] = new Room(4, 500, 2, date4, "GrandHotel", "Las Vegas");
+        rooms[4] = new Room(5, 200, 1, date5, "GrandHotel", "Tokyo");
 
     }
 
@@ -39,7 +39,7 @@ public class BookingComAPI implements API {
         // count equal rooms
         int counter = 0;
         for (Room r : rooms) {
-            if (findRoomSample.equals(rooms)) {
+            if (findRoomSample.equals(r)) {
                 counter++;
             }
         }
@@ -49,9 +49,9 @@ public class BookingComAPI implements API {
             Room[] foundRooms = new Room[counter];
 
             int j = 0;
-            for (int i = 0; i < counter; i++) {
-                if (findRoomSample.equals(rooms[i])) {
-                    foundRooms[j] = rooms[i];
+            for (Room r : rooms) {
+                if (findRoomSample.equals(r)) {
+                    foundRooms[j] = r;
                     j++;
                 }
             }

@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class GoogleAPI implements API {
 
-    private Room[] rooms;
+    private Room[] rooms = new Room[5];
 
     public GoogleAPI() {
         Date date1 = new Date();
@@ -39,7 +39,7 @@ public class GoogleAPI implements API {
         // count equal rooms
         int counter = 0;
         for (Room r : rooms) {
-            if (findRoomSample.equals(rooms)) {
+            if (findRoomSample.equals(r)) {
                 counter++;
             }
         }
@@ -49,9 +49,9 @@ public class GoogleAPI implements API {
             Room[] foundRooms = new Room[counter];
 
             int j = 0;
-            for (int i = 0; i < counter; i++) {
-                if (findRoomSample.equals(rooms[i])) {
-                    foundRooms[j] = rooms[i];
+            for (Room r : rooms) {
+                if (findRoomSample.equals(r)) {
+                    foundRooms[j] = r;
                     j++;
                 }
             }

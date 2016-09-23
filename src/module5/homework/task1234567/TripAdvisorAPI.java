@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class TripAdvisorAPI implements API {
 
-    private Room[] rooms;
+    private Room[] rooms = new Room[5];
 
     public TripAdvisorAPI() {
         Date date1 = new Date();
@@ -28,7 +28,7 @@ public class TripAdvisorAPI implements API {
         rooms[1] = new Room(2, 200, 2, date2, "Opera Hotel", "Kiev");
         rooms[2] = new Room(3, 300, 2, date3, "GrandHotel", "Paris");
         rooms[3] = new Room(4, 500, 2, date4, "GrandHotel", "Las Vegas");
-        rooms[4] = new Room(5, 200, 2, date5, "GrandHotel", "Tokyo");
+        rooms[4] = new Room(5, 200, 2, date5, "ParisStar", "Paris");
     }
 
     @Override
@@ -38,7 +38,7 @@ public class TripAdvisorAPI implements API {
         // count equal rooms
         int counter = 0;
         for (Room r : rooms) {
-            if (findRoomSample.equals(rooms)) {
+            if (findRoomSample.equals(r)) {
                 counter++;
             }
         }
@@ -48,9 +48,9 @@ public class TripAdvisorAPI implements API {
             Room[] foundRooms = new Room[counter];
 
             int j = 0;
-            for (int i = 0; i < counter; i++) {
-                if (findRoomSample.equals(rooms[i])) {
-                    foundRooms[j] = rooms[i];
+            for (Room r : rooms) {
+                if (findRoomSample.equals(r)) {
+                    foundRooms[j] = r;
                     j++;
                 }
             }

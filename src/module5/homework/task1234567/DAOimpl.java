@@ -5,7 +5,7 @@ public class DAOimpl implements DAO {
 
     @Override
     public Room save(Room room) {
-        System.out.println(room.toString() + " saved");
+        System.out.println(room + " saved");
         return room;
     }
 
@@ -28,4 +28,5 @@ public class DAOimpl implements DAO {
         System.out.println(room.toString() + " room with id: " + id + " is found");
         return room;
     }
+
 }

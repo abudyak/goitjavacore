@@ -27,7 +27,7 @@ public class Controller {
 
         Room[] api1 = apis[0].findRooms(price, persons, city, hotel);
         Room[] api2 = apis[1].findRooms(price, persons, city, hotel);
-        Room[] api3 = apis[3].findRooms(price, persons, city, hotel);
+        Room[] api3 = apis[2].findRooms(price, persons, city, hotel);
 
         int i = 0;
         for (Room r : api1) {
@@ -60,17 +60,27 @@ public class Controller {
 
         // count same rooms
         int roomCounter = 0;
-        for (Room r : roomsApi1) {
-            if (api1.equals(roomsApi2)) roomCounter++;
+        for (Room rApi1 : roomsApi1) {
+            for (Room rApi2 : roomsApi2) {
+                if (rApi2.equals(rApi1)) roomCounter++;
+            }
         }
 
         // save same rooms
         Room[] sameRooms = new Room[roomCounter];
 
-        for (int i = 0; i < roomCounter; i++) {
-            if (api1.equals(roomsApi2)) {
-                sameRooms[i] = roomsApi2[i];
+        int j = 0;
+        for (Room rApi1 : roomsApi1) {
+            for (Room rApi2 : roomsApi2) {
+                if (rApi2.equals(rApi1)) {
+                    sameRooms[j] = rApi2;
+                    j++;
+                }
             }
+        }
+
+        for (Room r : sameRooms) {
+            System.out.println("Result of check is: " + r);
         }
         return sameRooms;
     }
