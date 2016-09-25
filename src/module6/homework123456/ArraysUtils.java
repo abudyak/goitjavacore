@@ -1,7 +1,7 @@
 package module6.homework123456;
 
 
-public class ArraysUtils {
+public final class ArraysUtils {
 
     public static final int secondLargest(int array[]) {
         int maxFirstElement = max(array);
