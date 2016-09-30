@@ -21,6 +21,7 @@ public class Module6Task2 {
     public static void main(String[] args) {
 
         int[] myArrayInt = new int[10];
+        int[] myArrayInt2 = {3,3,3,5,4,5,5};
 
         // Preparing of data
         arrayGenerate(myArrayInt);

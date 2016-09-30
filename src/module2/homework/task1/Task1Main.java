@@ -1,6 +1,6 @@
 package module2.homework.task1;
 
-import java.util.Random;
+        import java.util.Random;
 
 
 public class Task1Main {
@@ -38,6 +38,7 @@ public class Task1Main {
             System.out.println("arrayInt[" + index + "] = " + arrayName[index]);
         }
     }
+
 
     static void arrayPrint(double[] arrayName) {
         for (int index = 0; index < arrayName.length; index++) {
