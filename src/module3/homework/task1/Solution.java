@@ -9,7 +9,7 @@ public class Solution {
         myByrd.walk();
         myByrd.fly();
         myByrd.sing();
-        myByrd.whoAmI();
+        System.out.println("I am Bird");
 
     }
 }
