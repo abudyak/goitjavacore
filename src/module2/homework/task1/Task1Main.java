@@ -1,6 +1,6 @@
 package module2.homework.task1;
 
-        import java.util.Random;
+import java.util.Random;
 
 
 public class Task1Main {
@@ -10,8 +10,8 @@ public class Task1Main {
 
         Random numberGenerator = new Random();
 
-        for (int index = 0; index < arrayName.length; index++) {
-            arrayName[index] = numberGenerator.nextInt(15) - 7; // To generate both positive and negative numbers
+        for (int i = 0; i < arrayName.length; i++) {
+            arrayName[i] = numberGenerator.nextInt(15) - 7; // To generate both positive and negative numbers
         }
     }
 
@@ -19,8 +19,8 @@ public class Task1Main {
 
         Random numberGenerator = new Random();
 
-        for (int index = 0; index < arrayName.length; index++) {
-            arrayName[index] = numberGenerator.nextDouble() * 15 - 7; // To generate both positive and negative numbers
+        for (int i = 0; i < arrayName.length; i++) {
+            arrayName[i] = numberGenerator.nextDouble() * 15 - 7; // To generate both positive and negative numbers
         }
     }
 
@@ -34,15 +34,15 @@ public class Task1Main {
 
     // Printing generated data
     static void arrayPrint(int[] arrayName) {
-        for (int index = 0; index < arrayName.length; index++) {
-            System.out.println("arrayInt[" + index + "] = " + arrayName[index]);
+        for (int i = 0; i < arrayName.length; i++) {
+            System.out.println("arrayInt[" + i + "] = " + arrayName[i]);
         }
     }
 
 
     static void arrayPrint(double[] arrayName) {
-        for (int index = 0; index < arrayName.length; index++) {
-            System.out.println("arrayDouble[" + index + "] = " + arrayName[index]);
+        for (int i = 0; i < arrayName.length; i++) {
+            System.out.println("arrayDouble[" + i + "] = " + arrayName[i]);
         }
     }
 
@@ -172,12 +172,12 @@ public class Task1Main {
         int maxFirstElement = max(arrayName);
         int maxSecondElement = arrayName[0];
 
-        for (int index = 0; index < arrayName.length; index++) {
-            if (arrayName[index] == maxFirstElement) {
+        for (int i = 0; i < arrayName.length; i++) {
+            if (arrayName[i] == maxFirstElement) {
                 continue;
             }
-            if (arrayName[index] > maxSecondElement) {
-                maxSecondElement = arrayName[index];
+            if (arrayName[i] > maxSecondElement) {
+                maxSecondElement = arrayName[i];
             }
         }
         return maxSecondElement;
@@ -187,12 +187,12 @@ public class Task1Main {
         double maxFirstElement = max(arrayName);
         double maxSecondElement = arrayName[0];
 
-        for (int index = 0; index < arrayName.length; index++) {
-            if (arrayName[index] == maxFirstElement) {
+        for (int i = 0; i < arrayName.length; i++) {
+            if (arrayName[i] == maxFirstElement) {
                 continue;
             }
-            if (arrayName[index] > maxSecondElement) {
-                maxSecondElement = arrayName[index];
+            if (arrayName[i] > maxSecondElement) {
+                maxSecondElement = arrayName[i];
             }
         }
         return maxSecondElement;

@@ -1,4 +1,4 @@
-package module6.Tests;
+package module6.tests;
 
 
 public class TestUniqueArray {
