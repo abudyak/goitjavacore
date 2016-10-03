@@ -20,10 +20,6 @@ public class Student {
         this.coursesTaken = coursesTaken;
     }
 
-    public Student() {
-        // This is default constructor
-    }
-
     public String getFirstName() {
         return firstName;
     }

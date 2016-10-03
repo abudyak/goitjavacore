@@ -17,17 +17,15 @@ public class Solution {
     Course[] coursesPackage2 = {english, javaCore, softSkills, french};
     Course[] coursesPackage3 = {english, javaCore, softSkills, french, guitar};
 
-    CollegeStudent student1 = new CollegeStudent("Jhordan", coursesPackage1);
-    CollegeStudent student2 = new CollegeStudent("Jhon", "Jhonson", 6);
-    CollegeStudent student3 = new CollegeStudent("KumarMagic", 100, 777);
-    CollegeStudent student4 = new CollegeStudent();
+    Student student1 = new Student("Obama", coursesPackage3);
+    Student student2 = new Student("Kevin", "Mitnick", 9);
 
-    Student student5 = new Student("Obama", coursesPackage3);
-    Student student6 = new Student("Kevin", "Mitnick", 9);
-    Student student7 = new Student();
+    CollegeStudent student3 = new CollegeStudent("Jhordan", coursesPackage1);
+    CollegeStudent student4 = new CollegeStudent("Jhon", "Jhonson", 6);
+    CollegeStudent student5 = new CollegeStudent("KumarMagic", "Jim", 10, "Standard College", 85, 12345);
 
-    SpecialStudent student8 = new SpecialStudent("William", "Shakespeare", 9, 123456780);
-    SpecialStudent student9 = new SpecialStudent("Newton", coursesPackage2, 123213210);
-    SpecialStudent student10 = new SpecialStudent(1231231230);
+    SpecialStudent studen6 = new SpecialStudent("Lee", coursesPackage3);
+    SpecialStudent student7 = new SpecialStudent("William", "Shakespeare", 9, "Cool College", 100, 7);
+    SpecialStudent student8 = new SpecialStudent("Newton", coursesPackage2, 123213210);
 
 }
