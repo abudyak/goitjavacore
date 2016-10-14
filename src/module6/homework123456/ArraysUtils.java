@@ -1,21 +1,30 @@
 package module6.homework123456;
 
 
+import java.util.Arrays;
+
 public final class ArraysUtils {
 
     public static final int secondLargest(int array[]) {
-        int maxFirstElement = max(array);
-        int maxSecondElement = array[0];
+        int max = max(array);
+        int result = array[0];
 
+        // variant 1 of the secondLargest solution
         for (int index = 0; index < array.length; index++) {
-            if (array[index] == maxFirstElement) {
-                continue;
+            if (index > result && result < max) {
+                result = array[index];
             }
-            if (array[index] > maxSecondElement) {
-                maxSecondElement = array[index];
-            }
+
+        // variant 2 of the secondLargest solution
+//
+//            if (array[index] == max) {
+//                continue;
+//            }
+//            if (array[index] > result) {
+//                result = array[index];
+//            }
         }
-        return maxSecondElement;
+        return result;
     }
 
     public static final int modulus(int array[]) {
@@ -91,23 +100,34 @@ public final class ArraysUtils {
     }
 
     public static final int[] findEvenElements(int[] array) {
-        int countEvens = 0;
-        for (int arr : array) {
-            if (arr % 2 == 0) {
-                countEvens++;
+        int[] result = new int[0];
+
+        // variant 1 of the findEventElements solution
+        for (int value : array) {
+            if (value % 2 == 0) {
+                result = Arrays.copyOf(result, result.length + 1);
+                result[result.length - 1] = value;
             }
         }
 
-        int[] evens = new int[countEvens];
+        // variant 2 of the findEventElements solution
 
-        int j = 0;
-        for (int arr : array) {
-            if (arr % 2 == 0) {
-                evens[j] = arr;
-                j++;
-            }
-        }
-        return evens;
+//        int countEvens = 0;
+//        for (int arr : array) {
+//            if (arr % 2 == 0) {
+//                countEvens++;
+//            }
+//        }
+//        int[] evens = new int[countEvens];
+//
+//        int j = 0;
+//        for (int arr : array) {
+//            if (arr % 2 == 0) {
+//                result[j] = arr;
+//                j++;
+//            }
+//        }
+        return result;
     }
 
 }

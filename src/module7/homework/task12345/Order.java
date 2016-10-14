@@ -1,7 +1,7 @@
 package module7.homework.task12345;
 
 
-public class Order {
+public class Order implements Comparable<Order> {
 
     private long id;
     private int price;
@@ -71,7 +71,13 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "price=" + price +
+                ", carrency" + currency +
                 ", itemName='" + itemName + '\'' +
                 '}' + user + '\n';
+    }
+
+    @Override
+    public int compareTo(Order o) {
+        return this.getUser().getLastName().compareTo(o.getUser().getLastName());
     }
 }

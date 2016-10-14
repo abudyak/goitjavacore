@@ -21,6 +21,10 @@ public class User {
         return city;
     }
 
+    public String getLastName() {
+        return lastName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -50,6 +54,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "city='" + city + '\'' +
+                " lastName='" + lastName + '\'' +
                 '}';
     }
 }

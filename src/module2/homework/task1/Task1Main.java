@@ -183,19 +183,30 @@ public class Task1Main {
         return maxSecondElement;
     }
 
-    static double secondLargest(double[] arrayName) {
-        double maxFirstElement = max(arrayName);
-        double maxSecondElement = arrayName[0];
+    // Second largest in one way
+    static double secondLargest(double[] array) {
+        double max = array[0];
+        double result = Double.MIN_VALUE;
 
-        for (int i = 0; i < arrayName.length; i++) {
-            if (arrayName[i] == maxFirstElement) {
-                continue;
+        for (int i = 1; i < array.length; i++) {
+
+            if (array[i] > max) {
+                result = max;
+                max = array[i];
             }
-            if (arrayName[i] > maxSecondElement) {
-                maxSecondElement = arrayName[i];
+
+            if (result < array[i] && array[i] < max) {
+                result = array[i];
             }
         }
-        return maxSecondElement;
+//        double max = max(array);
+//        double result = array[0];
+//        for (double value : array) {
+//            if (result < value && value < max) {
+//             result = value;
+//            }
+//        }
+        return result;
     }
 
 
