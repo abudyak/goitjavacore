@@ -3,7 +3,7 @@ package module8.homework;
 
 import java.util.List;
 
-public interface AbstractDAOTemp<T> {
+public interface AbstractDAO<T> {
 
     /**
      * Create universal interface AbstractDAO (T) with following methods
@@ -17,10 +17,13 @@ public interface AbstractDAOTemp<T> {
      * List T getList()
      */
 
-    <T> save(T);
-    void delete(T);
-    void deleteAll(List T);
-    void saveAll(List T);
+    T save(T t);
+    void delete(T t);
+    void deleteAll(List<T> t);
+    void saveAll(List<T> t);
     List<T> getList();
+
+    void deleteById(long id);
+    T get(long id);
 
 }
