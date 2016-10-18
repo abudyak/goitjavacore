@@ -26,7 +26,7 @@ public class AbstractDAOImpl<T extends User> implements AbstractDAO<T> {
 
     @Override
     public void saveAll(List<T> t) {
-        list.addAll(t)
+        list.addAll(t);
     }
 
     @Override
