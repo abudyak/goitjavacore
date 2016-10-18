@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class AbstractDAOImpl<T extends User> implements AbstractDAO<T> {
+public class AbstractDAOImpl<T extends Id> implements AbstractDAO<T> {
 
     private List<T> list = new ArrayList<>();
 

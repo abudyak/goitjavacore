@@ -1,7 +1,7 @@
 package module8.homework;
 
 
-public class User {
+public class User implements Id {
 
     private long id;
     private String name;
