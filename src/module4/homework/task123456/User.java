@@ -76,12 +76,25 @@ public class User {
     }
 
 
+//    @Override
+//    public String toString() {
+//        return "User{" +
+//                "name='" + name + '\'' +
+//                ", balance=" + balance +
+//                " " + bank.getCurrency() +
+//                ", companyName='" + companyName + '\'' +
+//                ", salary=" + salary +
+//                ", bank=" + bank +
+//                '}';
+//    }
+
     @Override
     public String toString() {
         return "User{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", balance=" + balance +
-                " " + bank.getCurrency() +
+                ", monthsOfEmployment=" + monthsOfEmployment +
                 ", companyName='" + companyName + '\'' +
                 ", salary=" + salary +
                 ", bank=" + bank +

@@ -10,12 +10,12 @@ public final class ArraysUtils {
         int result = array[0];
 
         // variant 1 of the secondLargest solution
-        for (int index = 0; index < array.length; index++) {
-            if (index > result && result < max) {
-                result = array[index];
+        for (int anArray : array) {
+            if (anArray > result && result < max) {
+                result = anArray;
             }
 
-        // variant 2 of the secondLargest solution
+            // variant 2 of the secondLargest solution
 //
 //            if (array[index] == max) {
 //                continue;

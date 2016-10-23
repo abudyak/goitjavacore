@@ -11,6 +11,7 @@ public class User implements Id {
         this.name = name;
     }
 
+    @Override
     public long getId() {
         return id;
     }

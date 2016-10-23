@@ -3,43 +3,48 @@ package module4.homework.task123456;
 
 public class BankSystemImpl implements BankSystem {
 
-    public void withdrawOfUser(User user, int amount) {
+    public boolean withdrawOfUser(User user, int amount) {
         Bank userBank = user.getBank();
 
         double commission = amount * userBank.getCommission(amount) / 100;
         double amountOfWithdrawal = amount + commission;
         double balanceAfterWithdrawal = user.getBalance() - amountOfWithdrawal;
 
-        if ((balanceAfterWithdrawal >= 0) && (amount <= userBank.getLimitOfWithdrawal())) {
-            user.setBalance(balanceAfterWithdrawal);
+        if (balanceAfterWithdrawal < amountOfWithdrawal) {
+            System.out.println("Not enough money on the balance");
+            return false;
         }
+        if (userBank.getLimitOfWithdrawal() > amountOfWithdrawal) {
+            System.out.println("Limit of the withdrawal is out");
+            return false;
+        }
+        user.setBalance(balanceAfterWithdrawal);
+        return true;
     }
 
-    public void fundUser(User user, int amount) {
+    public boolean fundUser(User user, int amount) {
         Bank userBank = user.getBank();
-
-        if (amount <= userBank.getLimitOfFunding()) {
-            user.setBalance(user.getBalance() + amount);
+        if (amount > userBank.getLimitOfFunding()) {
+            System.out.println("Amount more then limit");
+            return false;
         }
+        user.setBalance(user.getBalance() + amount);
+        return true;
     }
 
-    public void transferMoney(User fromUser, User toUser, int amount) {
-        Bank userBank = fromUser.getBank();
+    public boolean transferMoney(User fromUser, User toUser, int amount) {
+        boolean withdraw = withdrawOfUser(fromUser, amount);
+        boolean fund = fundUser(toUser, amount);
 
-        double commission = amount * userBank.getCommission(amount) / 100;
-        double amountToTransfer = amount + commission;
-
-        if (fromUser.getBalance() - amountToTransfer >= 0) {
-            fromUser.setBalance(fromUser.getBalance() - amountToTransfer);
-            toUser.setBalance(toUser.getBalance() + amount);
+        if (withdraw && fund) {
+            System.out.println("Do transfer");
+            return true;
         }
+        return false;
     }
 
-    public void paySalary(User user) {
-        Bank userBank = user.getBank();
-
-        double commission = userBank.getCommission(user.getSalary()) / 100;
-        user.setBalance(user.getBalance() + user.getSalary() - commission);
+    public boolean paySalary(User user) {
+        return fundUser(user, user.getSalary());
     }
 
 }

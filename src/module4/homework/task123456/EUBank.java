@@ -12,6 +12,10 @@ public class EUBank extends Bank{
     * 2% if EUR and up to 1000 and 4% if EUR and more than 1000
     */
 
+    public EUBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
+        super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
+    }
+
     int getLimitOfWithdrawal() {
         if (getCurrency() == Currency.USD) return 2000;
         if (getCurrency() == Currency.EUR) return 2200;
@@ -32,7 +36,6 @@ public class EUBank extends Bank{
 
     int getCommission(int amount) {
         int commission = 5; // default commission
-
         if (getCurrency() == Currency.USD) if (amount <= 1000) {
             commission = 5; // per cent
         } else {
@@ -44,7 +47,19 @@ public class EUBank extends Bank{
         } else {
             commission = 4;
         }
-
         return commission;
+    }
+
+    @Override
+    public String toString() {
+        return "EUBank{" +
+                "id=" + getId() +
+                ", bankCountry='" + getBankCountry() + '\'' +
+                ", currency=" + getCurrency() +
+                ", numberOfEmployees=" + getNumberOfEmployees() +
+                ", avrSalaryOfEmployee=" + getAvrSalaryOfEmployee() +
+                ", rating=" + getRating() +
+                ", totalCapital=" + getTotalCapital() +
+                '}';
     }
 }

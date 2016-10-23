@@ -1,7 +1,7 @@
 package module4.homework.task123456;
 
 
-public class ChinaBank extends Bank{
+public class ChinaBank extends Bank {
 
     /*
     * ChinaBank:
@@ -11,6 +11,10 @@ public class ChinaBank extends Bank{
     * commission - 3% if USD and up to 1000, 5% if USD and more than 1000
     * 10% if EUR and up to 1000 and 11% if EUR and more than 1000
     */
+
+    public ChinaBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
+        super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
+    }
 
     int getLimitOfWithdrawal() {
         if (getCurrency() == Currency.USD) return 100;
@@ -46,5 +50,18 @@ public class ChinaBank extends Bank{
         }
 
         return commission;
+    }
+
+    @Override
+    public String toString() {
+        return "ChinaBank{" +
+                "id=" + getId() +
+                ", bankCountry='" + getBankCountry() + '\'' +
+                ", currency=" + getCurrency() +
+                ", numberOfEmployees=" + getNumberOfEmployees() +
+                ", avrSalaryOfEmployee=" + getAvrSalaryOfEmployee() +
+                ", rating=" + getRating() +
+                ", totalCapital=" + getTotalCapital() +
+                '}';
     }
 }

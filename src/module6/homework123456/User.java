@@ -21,6 +21,10 @@ public class User {
         return balance;
     }
 
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
     public void setSalary(int salary) {
         this.salary = salary;
     }

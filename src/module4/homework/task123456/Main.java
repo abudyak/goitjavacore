@@ -13,9 +13,18 @@ public class Main {
         * Run four different operations with every User’s balance and print its objects to console.
         */
 
-        Bank usBank = new USBank();
-        Bank euBank = new EUBank();
-        Bank chinaBank = new ChinaBank();
+        Bank usBank = new USBank(111L, "USA", Currency.USD, 500, 2000, 77, 100_000_000L);
+        Bank euBank = new EUBank(222L, "Germany", Currency.EUR, 1000, 1500, 90, 200_000_000L);
+        Bank chinaBank = new ChinaBank(333L, "China", Currency.USD, 5500, 500, 80, 300_000_000L);
+
+        Bank[] banks = new Bank[]{usBank, euBank, chinaBank};
+        for (Bank bank : banks) {
+            System.out.println(String.format("%s Total salary %s", bank.getClass().getSimpleName(), bank.moneyPaidMonthlyForSalary()));
+//            System.out.println(bank.getClass().getSimpleName() + " total salary " + bank.moneyPaidMonthlyForSalary());
+        }
+
+        System.out.println("\n\n" + Currency.USD.getNumber());
+
         BankSystem bankSystem = new BankSystemImpl();
 
         // -= Creating users =-

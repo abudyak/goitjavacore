@@ -3,9 +3,9 @@ package module4.homework.task123456;
 
 public interface BankSystem {
 
-    void withdrawOfUser(User user, int amount);
-    void fundUser(User user, int amount);
-    void transferMoney(User fromUser, User toUser, int amount);
-    void paySalary(User user);
+    boolean withdrawOfUser(User user, int amount);
+    boolean fundUser(User user, int amount);
+    boolean transferMoney(User fromUser, User toUser, int amount);
+    boolean paySalary(User user);
 
 }

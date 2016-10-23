@@ -1,6 +1,8 @@
 package module6.homework123456;
 
 
+import java.util.Arrays;
+
 public class UserUtils {
 
     /**
@@ -21,61 +23,94 @@ public class UserUtils {
      * without duplicates and Return it
      */
     public static final User[] toUniqueArray(User[] users) {
-        User[] tempUsers = new User[users.length];
+        users = deleteEmptyUsers(users);
+        User[] result = new User[0];
 
-        int counter = 0;
-
-        for (int i = 0; i < users.length; i++) {
-            if (isUnique(tempUsers, users[i]))
-                tempUsers[counter++] = users[i];
+        for (User user : users) {
+            if (isUnique(result, user)) {
+                result = Arrays.copyOf(result, result.length + 1);
+                result[result.length - 1] = user;
+            }
         }
+        return result;
 
-        User[] uniqueUsers = new User[counter];
-
-        System.arraycopy(tempUsers, 0, uniqueUsers, 0, uniqueUsers.length);
-
-        return uniqueUsers;
+//        User[] tempUsers = new User[users.length];
+//
+//        int counter = 0;
+//
+//        for (int i = 0; i < users.length; i++) {
+//            if (isUnique(tempUsers, users[i]))
+//                tempUsers[counter++] = users[i];
+//        }
+//
+//        User[] uniqueUsers = new User[counter];
+//
+//        System.arraycopy(tempUsers, 0, uniqueUsers, 0, uniqueUsers.length);
+//
+//        return uniqueUsers;
     }
 
     public static final User[] usersWithConditionalBalance(User[] users, int balance) {
-        // Count users which have the balance
-        int counter = 0;
-        for (User user : users) {
-            if (user.getBalance() == balance) {
-                counter++;
-            }
-        }
+        users = toUniqueArray(users);
+        User[] result = new User[0];
 
-        // Save users which have the balance
-        User[] usersWithBalance = new User[counter];
-        int i = 0;
         for (User user : users) {
             if (user.getBalance() == balance) {
-                usersWithBalance[i++] = user;
+                result = Arrays.copyOf(result, result.length + 1);
+                result[result.length - 1] = user;
             }
         }
-        return usersWithBalance;
+        return result;
     }
 
+//        // Count users which have the balance
+//        int counter = 0;
+//        for (User user : users) {
+//            if (user.getBalance() == balance) {
+//                counter++;
+//            }
+//        }
+//
+//        // Save users which have the balance
+//        User[] usersWithBalance = new User[counter];
+//        int i = 0;
+//        for (User user : users) {
+//            if (user.getBalance() == balance) {
+//                usersWithBalance[i++] = user;
+//            }
+//        }
+//        return usersWithBalance;
+//
+
+
     public static final User[] paySalaryToUsers(User[] users) {
+        users = toUniqueArray(users);
         for (User user : users) {
-            user.setSalary(user.getBalance() + user.getSalary());
+            user.setBalance(user.getBalance() + user.getSalary());
         }
         return users;
     }
 
     public static final long[] getUsersId(User[] users) {
-        long[] usersId = new long[users.length];
+        users = toUniqueArray(users);
+        long[] result = new long[users.length];
         int i = 0;
         for (User user : users) {
-            usersId[i++] = user.getId();
+            result[i++] = user.getId();
         }
-
-        return usersId;
+        return result;
     }
 
     public static final User[] deleteEmptyUsers(User[] users) {
-        // Count not null users
+        User[] result = new User[0];
+        for (User user : users) {
+            if (user != null) {
+                result = Arrays.copyOf(result, result.length + 1);
+                result[result.length - 1] = user;
+            }
+        }
+        return result;
+    /*    // Count not null users
         int count = 0;
         for (User user : users) {
             if (user != null) count++;
@@ -88,5 +123,6 @@ public class UserUtils {
             if (user != null) notNullUsers[i++] = user;
         }
         return notNullUsers;
+    */
     }
 }

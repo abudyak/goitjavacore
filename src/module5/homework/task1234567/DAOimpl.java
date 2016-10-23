@@ -11,13 +11,13 @@ public class DAOimpl implements DAO {
 
     @Override
     public boolean delete(Room room) {
-        System.out.println(room.toString() + " deleted");
+        System.out.println(room + " deleted");
         return true;
     }
 
     @Override
     public Room update(Room room) {
-        System.out.println(room.toString() + " deleted");
+        System.out.println(room + " deleted");
         return room;
     }
 
@@ -25,7 +25,7 @@ public class DAOimpl implements DAO {
     public Room findById(long id) {
         Room room = new Room(id, 0, 0, null , null, null);
 
-        System.out.println(room.toString() + " room with id: " + id + " is found");
+        System.out.println(room + " room with id: " + id + " is found");
         return room;
     }
 

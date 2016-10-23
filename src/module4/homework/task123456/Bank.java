@@ -11,6 +11,15 @@ public abstract class Bank {
     private long rating;
     private long totalCapital;
 
+    public Bank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
+        this.id = id;
+        this.bankCountry = bankCountry;
+        this.currency = currency;
+        this.numberOfEmployees = numberOfEmployees;
+        this.avrSalaryOfEmployee = avrSalaryOfEmployee;
+        this.rating = rating;
+        this.totalCapital = totalCapital;
+    }
 
     public long getId() {
         return id;
@@ -77,11 +86,26 @@ public abstract class Bank {
     abstract int getCommission(int amount);
 
     double moneyPaidMonthlyForSalary() {
-        return 0.0;
+        return numberOfEmployees * avrSalaryOfEmployee;
     }
 
+/*
     @Override
     public String toString() {
         return getClass().getSimpleName();
+    }
+*/
+
+    @Override
+    public String toString() {
+        return "Bank{" +
+                "id=" + id +
+                ", bankCountry='" + bankCountry + '\'' +
+                ", currency=" + currency +
+                ", numberOfEmployees=" + numberOfEmployees +
+                ", avrSalaryOfEmployee=" + avrSalaryOfEmployee +
+                ", rating=" + rating +
+                ", totalCapital=" + totalCapital +
+                '}';
     }
 }
