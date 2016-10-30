@@ -40,13 +40,13 @@ public class Main {
         Set<Order> ordersTreeSet = new TreeSet<>(orders);
 
         // Sorting list by Order price in decrease order
-        Comparator<Order> increasePrice = new Comparator<Order>() {
+        Comparator<Order> decreasePrice = new Comparator<Order>() {
             @Override
             public int compare(Order o1, Order o2) {
                 return o2.getPrice() - o1.getPrice();
             }
         };
-        orders.sort(increasePrice);
+        orders.sort(decreasePrice);
         System.out.println("Sorted list by Order price in decrease order");
         System.out.println(orders);
 
