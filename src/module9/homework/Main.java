@@ -6,7 +6,6 @@ import module7.homework.task12345.Order;
 import module7.homework.task12345.User;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
@@ -33,10 +32,8 @@ public class Main {
      */
 
     // Creating 10 Orders with 10 Users and putting them to the List
-
-
     public static void main(String[] args) {
-        List<Order> orders = new ArrayList<>();
+        ArrayList<Order> orders = new ArrayList<>();
 
         orders.add(new Order(0, 500, Currency.USD, "Order01", "Karavan", (new User(100, "Bob", "Petrov", "New York", 1000))));
         orders.add(new Order(1, 2000, Currency.UAH, "Order02", "Shipito", (new User(101, "Jhon", "Dow", "Detroit", 3000))));
@@ -51,16 +48,32 @@ public class Main {
         orders.add(new Order(8, 125, Currency.USD, "Order07", "Indigo & Cotton", (new User(108, "Scarlett", "Johansson", "Kansas City", 9000))));
 
         // Sort list by Order price in decrease order
-        Utils.sortDecreasePrice((ArrayList<Order>) orders);
+        Utils.sortDecreasePrice(orders);
 
         // Sort list by Order price in increase order AND User city
-        Utils.sortIncreasePriceAndCity((ArrayList<Order>) orders);
+        Utils.sortIncreasePriceAndCity(orders);
 
         // Sort list by Order itemName AND ShopIdentificator AND User city
-        Utils.sortNameAndShopIdentificatorAndCity((ArrayList<Order>) orders);
+        Utils.sortNameAndShopIdentificatorAndCity(orders);
 
+        // Delete duplicates from the list
+        Utils.deleteDuplicates(orders);
 
+        // Delete items where price less than 1500
+        Utils.deleteLessOf1500(orders);
 
+        // Separate list for two list - orders in USD and UAH
+        Utils.separateOrderByUSD(orders);
+        Utils.separateOrderByUAH(orders);
+
+        // Separate list for as many lists as many unique cities are in User
+        Utils.separateListByUniqueCities(orders);
+
+        // Check if set contain Order where User's lastName is - 'Petrov'
+        Utils.separateOrderByLastName(orders, "Petrov");
+
+        // Delete orders where currency is USD
+        Utils.deleteOrderUSD(orders);
     }
 
 }
