@@ -10,6 +10,15 @@ public class SimpleException {
     Add a finally clause and print a message to prove you were there.
    */
 
-// TODO
+    public static void main(String[] args)
+    {
+        try {
+            throw new Exception("Exception is thrown here.");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Finally clause is invoked here.");
+        }
+    }
 
 }

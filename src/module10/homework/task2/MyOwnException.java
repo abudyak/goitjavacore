@@ -1,7 +1,7 @@
 package module10.homework.task2;
 
 
-public class MyOwnException {
+public class MyOwnException extends Exception {
 
    /*
     Create your own exception class using the extends keyword.
@@ -10,6 +10,22 @@ public class MyOwnException {
     Create a try-catch clause to exercise your new exception.
    */
 
-//   TODO
+    private String message;
+
+    public MyOwnException(String message) {
+        this.message = message;
+    }
+
+    public void printStoredString() {
+        System.out.println(message);
+    }
+
+    public static void main(String[] args) {
+        try {
+            throw new MyOwnException("Message from my own exception.");
+        } catch (MyOwnException e) {
+            e.printStoredString();
+        }
+    }
 
 }

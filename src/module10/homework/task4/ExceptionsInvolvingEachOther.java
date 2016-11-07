@@ -1,6 +1,8 @@
 package module10.homework.task4;
 
 
+import module10.homework.task2.MyOwnException;
+
 public class ExceptionsInvolvingEachOther {
 
     /*
@@ -11,6 +13,21 @@ public class ExceptionsInvolvingEachOther {
     Test your code in main( ).
     */
 
-//    TODO
+    public void f() {
+        try {
+            g();
+            throw new MyOwnException(" My exception from from f()");
+        } catch (MyOwnException e) {
+            e.printStoredString();
+        }
 
+    }
+
+    public void g() {
+        try {
+            throw new MyOwnException("My exception from g()");
+        } catch (MyOwnException e) {
+            e.printStoredString();
+        }
+    }
 }
